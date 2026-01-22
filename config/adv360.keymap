@@ -7,6 +7,15 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <33 40>;  // G + H
+            bindings = <&kp TAB>;
+        };
+    };
+
     behaviors {
       #include "macros.dtsi"
       #include "version.dtsi"
@@ -98,8 +107,8 @@
       display-name = "Vim";
       bindings = <
         &none         &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5) &none                                                           &none &kp LG(N6) &kp LG(N7) &kp LG(N8) &kp LG(N9) &kp LG(N0) &none
-        &none         &none      &kp LG(W)  &none      &none      &none      &none                                                           &none &none      &none      &tog 4     &none      &none      &none
-        &none         &none      &none      &none      &kp LG(F)  &none      &none           &none     &none    &none     &none              &none &kp LG(LEFT) &kp LG(DOWN) &kp LG(UP) &kp LG(RIGHT) &none &none
+        &none         &none      &none      &none      &none      &none      &none                                                           &none &none      &none      &tog 4     &none      &none      &none
+        &none         &none      &none      &none      &none      &none      &none           &none     &none    &none     &none              &none &kp LG(LEFT) &kp LG(DOWN) &kp LG(UP) &kp LG(RIGHT) &none &none
         &none         &none      &none      &none      &none      &none                                &none    &none                              &none      &none      &none      &none      &none      &none
         &none         &none      &none      &none      &none                       &none     &tog 4    &none    &none     &none     &none                     &none      &none      &none      &none      &none
       >;
