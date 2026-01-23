@@ -49,15 +49,15 @@
           hold-trigger-on-release;
       };
 
-      // Delete key: tap = toggle normal mode (layer 4), hold = Super
-      del_super: delete_super_layer {
+      // Delete key: tap = toggle vim layer (4), hold = momentary numpad layer (1)
+      del_layer: delete_layer_tap {
           compatible = "zmk,behavior-hold-tap";
-          label = "DELETE_SUPER_LAYER";
+          label = "DELETE_LAYER_TAP";
           #binding-cells = <2>;
-          tapping-term-ms = <150>;
+          tapping-term-ms = <200>;
           quick-tap-ms = <0>;
-          flavor = "tap-preferred";
-          bindings = <&kp>, <&tog>;
+          flavor = "balanced";
+          bindings = <&mo>, <&tog>;
       };
     };
 
@@ -71,7 +71,7 @@
         &kp TAB   &kp Q     &kp W    &kp E    &kp R            &kp T  &none                                                                        &none &kp Y  &kp U          &kp I     &kp O         &kp P            &kp BSLH
         &kp ESC   &hml LCTRL A &hml LALT S &hml LGUI D &hml LSHFT F &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  &hmr RSHFT J   &hmr RGUI K &hmr RALT L   &hmr RCTRL SEMI  &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V            &kp B                                &kp HOME &kp PG_UP                                   &kp N  &kp M          &kp COMMA &kp DOT       &kp FSLH         &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                      &kp BSPC &tog 4 &kp END  &kp PG_DN &kp ENTER &kp SPACE                &kp UP         &kp DOWN  &kp LBKT      &kp RBKT         &mo 2
+        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                      &kp BSPC &del_layer 1 4 &kp END  &kp PG_DN &kp ENTER &kp SPACE                &kp UP         &kp DOWN  &kp LBKT      &kp RBKT         &mo 2
       >;
     };
     keypad {
